@@ -1,0 +1,19 @@
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache/
+dist
+node_modules
+.DS_Store
+.parcel-cache
+
+node_modules/
+
+dist/
+.cache/
+
+/data.mdb
+typings/
+
+.parcel-cache/data.mb
+
+# will this work idk 
