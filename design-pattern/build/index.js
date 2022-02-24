@@ -1,22 +1,50 @@
 "use strict";
-var Sorter = /** @class */ (function () {
-    function Sorter(collection) {
-        this.collection = collection;
-    }
-    Sorter.prototype.sort = function () {
-        var length = this.collection.length;
-        for (var i = 0; i < length; i++) {
-            for (var j = 0; j < length - i - 1; j++) {
-                if (this.collection[j] > this.collection[j + 1]) {
-                    var leftHand = this.collection[j];
-                    this.collection[j] = this.collection[j + 1];
-                    this.collection[j + 1] = leftHand;
-                }
+Object.defineProperty(exports, "__esModule", { value: true });
+var NumbersCollection_1 = require("./NumbersCollection");
+var CharctersCollection_1 = require("./CharctersCollection");
+var numbersCollection = new NumbersCollection_1.NumbersCollection([50, 3, -5, 0]);
+numbersCollection.sort();
+console.log(numbersCollection.data);
+var charactersCollection = new CharctersCollection_1.CharactersCollection('Xaayb');
+charactersCollection.sort();
+console.log(charactersCollection.data);
+/*class Sorter {
+   
+    //  the union operator looks at the properties between the two and only allows you the use
+    //  the ones that apply to both the common properties with array we can target an index
+    // however you cannot do that with a string
+        constructor ( public collection: number[] | string ) {}
+    
+    
+    sort(): void {
+    const {length }= this.collection
+    
+    
+    
+    for ( let i= 0; i < length; i++) {
+        for ( let j= 0; j < length -i -1; j ++) {
+            
+            // the logic below only works if collection is number []
+            // if collection is an array of numbers
+            // the line below is a Type Guard
+            if (this.collection instanceof Array)
+            // collection === number[]
+            if ( this.collection[j] > this.collection [j+ 1]) {
+                const leftHand = this.collection[j];
+                this.collection[j]= this.collection[j+1];
+                this.collection[j +1] = leftHand
             }
+    // if collection is string use this logic below
+    // type guard below works for primitive values not array
+    if( typeof this.collection === 'string'){
+        
+    }
+    
+    
         }
-    };
-    return Sorter;
-}());
-var sorter = new Sorter([10, 2, -5, 0]);
-sorter.sort();
-console.log(sorter.collection);
+    
+    
+    }
+    }
+    }
+*/
